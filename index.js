@@ -10,6 +10,10 @@ app.get('/name', function(req, res) {
     res.send('my name is Trung');
 });
 
+app.get('/age', function(req, res) {
+    res.send('19');
+});
+
 app.listen(port, function() {
     console.log('server listening on port ' + port);
 });
