@@ -14,6 +14,10 @@ app.get('/age', function(req, res) {
     res.send('19');
 });
 
+app.get('/gender', function(req, res) {
+    res.send('male');
+});
+
 app.listen(port, function() {
     console.log('server listening on port ' + port);
 });
