@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const bodyParser = require('body-parser');
 
 app.set('view engine', 'pug');
 app.set('views', './views')
+
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 let users = ['Trung', 'Hieu', 'Thien'];
 
@@ -33,6 +37,15 @@ app.get('/users/search', function(req, res) {
         users: nameFilter,
         nameSearch: nameSearch
     })
+});
+
+app.get('/users/create', function(req, res) {
+    res.render('users/create/index.pug');
+});
+
+app.post('/users/create', function(req, res) {
+    users.push(req.body.name);
+    res.redirect('/users');
 });
 
 app.listen(port, function() {
