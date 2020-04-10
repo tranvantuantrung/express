@@ -5,6 +5,7 @@ const port = 3000;
 app.set('view engine', 'pug');
 app.set('views', './views')
 
+let users = ['Trung', 'Hieu', 'Thien'];
 
 app.get('/', function(req, res) {
     res.render('say-hello/index.pug', {
@@ -18,10 +19,20 @@ app.get('/name', function(req, res) {
 
 app.get('/users', function(req, res) {
     res.render('users/index.pug', {
-        users: [
-            'trung', 'hieu', 'thien'
-        ]
+        users: users
     });
+});
+
+app.get('/users/search', function(req, res) {
+    let nameSearch = req.query.name;
+    let nameFilter = users.filter(function(name) {
+        return name.toLowerCase().indexOf(nameSearch.toLowerCase()) !== -1;
+    });
+    
+    res.render('users/index.pug', {
+        users: nameFilter,
+        nameSearch: nameSearch
+    })
 });
 
 app.listen(port, function() {
