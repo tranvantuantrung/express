@@ -1,14 +1,17 @@
-h1 users
-form(action="/users/search" method="GET")
-    input(type="text" name="name" value=nameSearch)
-    button Search
+extends ../layouts/common.pug
 
-ul 
-    each user in users 
-       li
-            span= user.name
-            span &nbsp
-            a(href='users/' + user.id) view
+block content
+    h1 users
+    form(action="/users/search" method="GET")
+        input(type="text" name="name" value=nameSearch)
+        button(class="btn btn-success ml-2") Search
 
-br
-a(href="/users/create") create
+    ul(style="list-style-type: none" class="m-0 p-2")
+        each user in users 
+            li
+                span= user.name
+                span &nbsp
+                a(href='users/' + user.id) view
+
+    br
+    a(href="/users/create" type="button" class="btn btn-info") create
