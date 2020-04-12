@@ -19,11 +19,16 @@
 
 .nav-link {
   color: #ffffff !important;
+  border-radius: 3px;
 }
 
 .btn-navbar {
   border-color: #ffffff !important;
   background-color: #bbbbbb !important;
+}
+
+.navbar .nav-link:hover {
+  background-color: #aaaaaa;
 }
 
 /* intro section */
@@ -32,4 +37,12 @@
   background-size: cover;
   background-position: center;
   height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-section .title-heading {
+  display: inline-block;
+  color: #ffffff;
 }

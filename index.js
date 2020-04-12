@@ -15,9 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.render('index.pug', {
-    name: 'coders',
-  });
+  res.render('index.pug');
 });
 
 app.use('/users', userRoute);

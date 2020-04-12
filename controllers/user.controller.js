@@ -8,17 +8,20 @@ module.exports.index = function (req, res) {
 };
 
 module.exports.search = function (req, res) {
-  let nameSearch = req.query.name;
-  let nameFilter = db
+  let valueInput = req.query.input;
+  let inputFilter = db
     .get('users')
     .value()
     .filter(function (user) {
-      return user.name.toLowerCase().indexOf(nameSearch.toLowerCase()) !== -1;
+      return (
+        user.name.toLowerCase().indexOf(valueInput.toLowerCase()) !== -1 ||
+        user.phone.indexOf(valueInput) !== -1
+      );
     });
 
   res.render('users/index.pug', {
-    users: nameFilter,
-    nameSearch: nameSearch,
+    users: inputFilter,
+    valueInput: valueInput,
   });
 };
 

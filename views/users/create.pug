@@ -1,9 +1,13 @@
 extends ../layouts/common.pug
 
 block content
-    h1 Create
-    form(action="/users/create" method="POST")
-        label name: 
-        br
-        input(type="text" name="name")
-        button(class="btn btn-success ml-2") Create
+    .container.pt-5
+        h1 Create
+        form(action="/users/create" method="POST")
+            .form-group
+                label name: 
+                input.form-control.w-auto(type="text" name="name")
+            .form-group
+                label Phone: 
+                input.form-control.w-auto(type="text" name="phone")
+            button.btn.btn-success Create

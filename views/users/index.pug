@@ -1,17 +1,23 @@
 extends ../layouts/common.pug
 
 block content
-    h1 users
-    form(action="/users/search" method="GET")
-        input(type="text" name="name" value=nameSearch)
-        button(class="btn btn-success ml-2") Search
+    .container.pt-3
+        h1 users
+        form.d-flex(action="/users/search" method="GET")
+            input.form-control.w-auto(type="text" name="input" value=valueInput placeholder="search name or phone...")
+            button(class="btn btn-success ml-2") Search
 
-    ul(style="list-style-type: none" class="m-0 p-2")
-        each user in users 
-            li
-                span= user.name
-                span &nbsp
-                a(href='users/' + user.id) view
+        table.table.mt-5
+            tr
+                th Name
+                th Phone
+                th Action
+            each user in users 
+                tr
+                    td= user.name
+                    td= user.phone
+                    td
+                        a.btn.btn-info(href='users/' + user.id) view
 
-    br
-    a(href="/users/create" type="button" class="btn btn-info") create
+        br
+        a(href="/users/create" type="button" class="btn btn-info") create

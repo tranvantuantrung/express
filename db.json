@@ -2,31 +2,18 @@
   "users": [
     {
       "name": "Trung",
-      "id": "_QCLFwEXI"
-    },
-    {
-      "name": "Hieu",
-      "id": "1kWnRQWk7"
+      "phone": "0901946596",
+      "id": "p9gFyvS-z"
     },
     {
       "name": "Thien",
-      "id": "ouJ4yiw5K"
+      "phone": "0905050505",
+      "id": "9BEPLQ60e"
     },
     {
-      "name": "Minh",
-      "id": "-vMCEAVeO"
-    },
-    {
-      "name": "Thinh",
-      "id": "MnBJgSwQX"
-    },
-    {
-      "name": "Thong",
-      "id": "Vcq6BlfJE"
-    },
-    {
-      "name": "Nguyen",
-      "id": "-0Sle_WKp"
+      "name": "Hieu",
+      "phone": "0789995566",
+      "id": "YB7Mk9u5X"
     }
   ]
 }
