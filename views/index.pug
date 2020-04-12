@@ -1,4 +1,13 @@
-h1 hello, #{name}
-a(href='/name') my name
-br
-a(href='/users') users
+extends ./layouts/common.pug
+block content
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      a.navbar-brand.codersCharacter(href='/')= name
+          span.xCharacter X
+      button.btn-navbar.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarRes')
+        span.navbar-toggler-icon
+      #navbarRes.collapse.navbar-collapse
+        ul.navbar-nav.mx-auto.text-center
+          li.navbar-item
+            a.nav-link(href="/users") Users list
+  .container-fluid.intro-section 

@@ -12,14 +12,12 @@ app.set('views', './views');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
   res.render('index.pug', {
-    name: 'codersX',
+    name: 'coders',
   });
-});
-
-app.get('/name', function (req, res) {
-  res.render('my-name.pug');
 });
 
 app.use('/users', userRoute);
