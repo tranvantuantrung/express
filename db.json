@@ -3,22 +3,23 @@
     {
       "name": "Trung",
       "phone": "0901946596",
-      "id": "p9gFyvS-z"
+      "id": "p9gFyvS-z",
+      "email": "tranvantuantrung@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "Hieu",
+      "phone": "0934121213",
+      "email": "nguyenhieu@gmail.com",
+      "password": "123456",
+      "id": "YOYN9SFjK"
     },
     {
       "name": "Thien",
       "phone": "0905050505",
-      "id": "9BEPLQ60e"
-    },
-    {
-      "name": "Hieu",
-      "phone": "0789995566",
-      "id": "YB7Mk9u5X"
-    },
-    {
-      "name": "Minh",
-      "phone": "0934121213",
-      "id": "02xb9bT3K"
+      "email": "nguyencongnhathtien@gmail.com",
+      "password": "123456",
+      "id": "nbr1_gpnZ"
     }
   ]
 }

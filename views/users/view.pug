@@ -3,6 +3,19 @@ extends ../layouts/common.pug
 block content
     .container.pt-5
         h1 view user
-        .mt-5
-            b.text-info Name: 
-            span= user.name
+        .pt-3
+            .my-2
+                b.text-info Name: 
+                span.ml-2= user.name
+            .my-2
+                b.text-info ID: 
+                span.ml-2= user.id  
+            .my-2
+                b.text-info Phone: 
+                span.ml-2= user.phone
+            .my-2
+                b.text-info Email: 
+                span.ml-2= user.email
+               
+        br
+        a.btn.btn-primary(href="/users" type="button") Back    

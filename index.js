@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const userRoute = require('./routes/users.route');
+const authRoute = require('./routes/auth.route');
+
+const authMiddleware = require('./middlewares/auth.middleware');
 
 const port = 3001;
 const app = express();
@@ -16,11 +19,12 @@ app.use(cookieParser());
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
+app.get('/', authMiddleware.requireAuth, function (req, res) {
   res.render('index.pug');
 });
 
-app.use('/users', userRoute);
+app.use('/users', authMiddleware.requireAuth, userRoute);
+app.use('/auth', authRoute);
 
 app.listen(port, function () {
   console.log('server listening on port ' + port);
