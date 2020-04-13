@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const secrectCookie = require('shortid');
 
 const userRoute = require('./routes/users.route');
 const authRoute = require('./routes/auth.route');
@@ -15,7 +16,7 @@ app.set('views', './views');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookieParser());
+app.use(cookieParser(secrectCookie.generate()));
 
 app.use(express.static('public'));
 

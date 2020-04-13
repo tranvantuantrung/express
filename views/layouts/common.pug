@@ -17,7 +17,9 @@
               li.navbar-item.mx-5
                 a.nav-link(href="/users") Users list  
               li.navbar-item.mx-5
-                a.nav-link(href="/users/create") Create   
+                a.nav-link(href="/users/create") Create
+            .userLogin.text-info.text-center= user ? user.name : ''
+
       block content
 
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

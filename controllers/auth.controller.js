@@ -5,6 +5,8 @@ module.exports.login = function (req, res) {
 };
 
 module.exports.postLogin = function (req, res) {
-  res.cookie('userId', res.locals.user.id);
+  res.cookie('userId', res.locals.user.id, {
+    signed: true,
+  });
   res.redirect('/');
 };
