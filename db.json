@@ -2,24 +2,34 @@
   "users": [
     {
       "name": "Trung",
-      "phone": "0901946596",
-      "id": "p9gFyvS-z",
+      "phone": "0934121212",
       "email": "tranvantuantrung@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93"
-    },
-    {
-      "name": "Hieu",
-      "phone": "0934121213",
-      "email": "nguyenhieu@gmail.com",
-      "password": "e10adc3949ba59abbe56e057f20f883e",
-      "id": "YOYN9SFjK"
+      "password": "4297f44b13955235245b2497399d7a93",
+      "id": "qaEWPGMts",
+      "avatar": "/uploads/83f0a60c11f13be53bd299cac7f8d5d8"
     },
     {
       "name": "Thien",
       "phone": "0905050505",
       "email": "nguyencongnhathtien@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
-      "id": "mT6gE875b"
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": "iCWSaUKCS",
+      "avatar": "/uploads/d37b1f0cb75ef34407b791aef30cf6c1"
+    },
+    {
+      "name": "Hieu",
+      "phone": "0789995566",
+      "email": "nguyenhieu@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": "rGKmj-ced",
+      "avatar": "/uploads/1ed1972367fa4e9181134df09bd125d2"
+    },
+    {
+      "name": "Minh",
+      "phone": "0934121213",
+      "email": "levanminh@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": "NAORkgHnG"
     }
   ],
   "products": [

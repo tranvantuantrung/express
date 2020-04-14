@@ -20,7 +20,12 @@
                 a.nav-link(href="/users/create") Create
               li.navbar-item.mx-5
                 a.nav-link(href="/products") Products
-            .userLogin.text-info.text-center= user ? user.name : ''
+            .userLogin.d-flex.align-items-center
+              if (user.avatar)
+                img.rounded(src= user.avatar width="40" height="40")
+              else
+                img.rounded(src="/images/avatar.png" width="40" height="40")
+              .text-info.text-center.mx-2= user ? user.name : ''
 
       block content
 

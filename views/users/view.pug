@@ -4,18 +4,22 @@ block content
     .container.pt-5
         h1 view user
         .pt-3
+            if (userView.avatar)
+                img.rounded(src= userView.avatar width="100" height="100")
+            else
+                img.rounded(src="/images/avatar.png" width="100" height="100")
             .my-2
                 b.text-info Name: 
-                span.ml-2= user.name
+                span.ml-2= userView.name
             .my-2
                 b.text-info ID: 
-                span.ml-2= user.id  
+                span.ml-2= userView.id  
             .my-2
                 b.text-info Phone: 
-                span.ml-2= user.phone
+                span.ml-2= userView.phone
             .my-2
                 b.text-info Email: 
-                span.ml-2= user.email
+                span.ml-2= userView.email
                
         br
         a.btn.btn-primary(href="/users" type="button") Back    

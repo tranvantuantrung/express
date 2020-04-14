@@ -33,15 +33,17 @@ module.exports.create = function (req, res) {
 
 module.exports.viewUserById = function (req, res) {
   let id = req.params.id;
-  let user = db.get('users').find({ id: id }).value();
+  let userView = db.get('users').find({ id: id }).value();
   res.render('users/view', {
-    user: user,
+    userView: userView,
   });
 };
 
 module.exports.postCreate = function (req, res) {
   req.body.id = shortid.generate();
   req.body.password = md5(req.body.password);
+  if (req.file)
+    req.body.avatar = '/' + req.file.path.split('/').slice(1).join('/');
 
   db.get('users').push(req.body).write();
   res.redirect('/users');
