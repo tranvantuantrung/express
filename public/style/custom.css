@@ -46,3 +46,9 @@
   display: inline-block;
   color: #ffffff;
 }
+
+/* products */
+
+.products-wrapper .product-item .desription {
+  font-size: 14px;
+}

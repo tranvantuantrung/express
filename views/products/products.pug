@@ -1,0 +1,40 @@
+extends ../layouts/common.pug
+
+block content
+  .container.pt-5
+    h1 Products
+    .products-wrapper.pt-5.d-flex.flex-wrap
+      each product in products
+        .proctuct-item.my-3.col-6.col-lg-3
+          .card.h-100
+            img.card-img-top(src=product.image)
+            .card-body.d-flex.flex-column.justify-content-between
+              h5.card-title= product.name
+              p.card-text= product.description
+              div
+                a.btn.btn-primary(href="#") Add to cart
+  
+    nav.mt-3
+      ul.pagination.justify-content-center
+        li.page-item
+            a.page-link(href='/products?page=1') First
+        li.page-item(class= page === 1 ? 'disabled' : '')
+          a.page-link(href='/products?page=' + (page - 1)) &laquo
+        if (page === 1 || page === 2) 
+          - for (let i = 1; i <= 3; i++)
+            li.page-item(class= page === i ? 'active' : '')
+              a.page-link(href='/products?page=' + i)= i
+        else if (page == lengthPage -1 || page == lengthPage)
+          - for (let i = 2; i >= 0; i--)
+            li.page-item(class= page === (lengthPage - i) ? 'active' : '')
+              a.page-link(href='/products?page=' + (lengthPage - i))= lengthPage - i
+        else      
+          - for (let i = page - 1; i <= page + 1; i++)
+              li.page-item(class= page === i ? 'active' : '')
+                a.page-link(href='/products?page=' + i)= i
+        li.page-item(class= page === lengthPage ? 'disabled' : '')
+          a.page-link(href='/products?page=' + (page + 1)) &raquo
+        li.page-item
+            a.page-link(href='/products?page=' + lengthPage) Last
+    
+      
