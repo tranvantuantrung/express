@@ -28,7 +28,7 @@ app.get('/', authMiddleware.requireAuth, function (req, res) {
 
 app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
-app.use('/products', authMiddleware.requireAuth, productRoute);
+app.use('/products', productRoute);
 
 app.listen(port, function () {
   console.log('server listening on port ' + port);
