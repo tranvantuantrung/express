@@ -12,7 +12,7 @@ block content
               h5.card-title= product.name
               p.card-text= product.description
               div
-                a.btn.btn-primary(href="#") Add to cart
+                a.btn.btn-primary(href="/cart/add/" + product.id) Add to cart
   
     nav.mt-3
       ul.pagination.justify-content-center

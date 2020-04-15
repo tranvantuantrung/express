@@ -12,14 +12,16 @@
             span.navbar-toggler-icon
           #navbarRes.collapse.navbar-collapse
             ul.navbar-nav.mx-auto.text-center
-              li.navbar-item.mx-5
+              li.navbar-item.mx-3
                 a.nav-link(href="/") Home
-              li.navbar-item.mx-5
+              li.navbar-item.mx-3
                 a.nav-link(href="/users") Users list  
-              li.navbar-item.mx-5
+              li.navbar-item.mx-3
                 a.nav-link(href="/users/create") Create
-              li.navbar-item.mx-5
+              li.navbar-item.mx-3
                 a.nav-link(href="/products") Products
+              .d-flex.align-items-center.text-warning.justify-content-center.mx-3
+                span Cart (#{coutProduct})
             .userLogin.d-flex.align-items-center.justify-content-end
               if (user)
                 if (user.avatar)

@@ -633,5 +633,15 @@
       "image": "https://loremflickr.com/320/240",
       "description": "odio odio elementum eu interdum eu tincidunt in leo maecenas"
     }
+  ],
+  "sessions": [
+    {
+      "id": "uUewNmjmq",
+      "cart": {
+        "e69f25f2-028b-4cdd-b0d1-5a0a96b21459": 3,
+        "867e9609-ac84-4e65-bb4e-b9a5fd8cea78": 1,
+        "410519e9-51ac-45b3-aae1-bfcbebef607b": 1
+      }
+    }
   ]
 }
