@@ -3,6 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
 
 const userRoute = require('./routes/users.route');
 const authRoute = require('./routes/auth.route');

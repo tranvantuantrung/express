@@ -1,29 +1,22 @@
-const shortId = require('shortid');
+const Session = require('../models/session.model');
 
-const db = require('../db');
-
-module.exports = function (req, res, next) {
+module.exports = async function (req, res, next) {
   if (!req.signedCookies.sessionId) {
-    let sessionId = shortId.generate();
-    res.cookie('sessionId', sessionId, {
+    let newSession = await Session.create({});
+
+    res.cookie('sessionId', newSession._id, {
       signed: true,
     });
-    db.get('sessions').push({ id: sessionId }).write();
   }
 
-  let cart = db
-    .get('sessions')
-    .find({ id: req.signedCookies.sessionId })
-    .get('cart', {})
-    .value();
+  let session = await Session.findById(req.signedCookies.sessionId);
+  let countProduct = 0;
 
-  let coutProduct = 0;
-
-  for (let product in cart) {
-    coutProduct += cart[product];
+  for (let product of session.cart) {
+    countProduct += product.quantity;
   }
 
-  res.locals.coutProduct = coutProduct;
+  res.locals.countProduct = countProduct;
 
   next();
 };
