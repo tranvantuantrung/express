@@ -7,15 +7,15 @@ module.exports = async function (req, res, next) {
     res.cookie('sessionId', newSession.id, {
       signed: true,
     });
-    next();
-    return;
   }
 
   let session = await Session.findById(req.signedCookies.sessionId);
   let countProduct = 0;
 
-  for (let product of session.cart) {
-    countProduct += product.quantity;
+  if (session) {
+    for (let product of session.cart) {
+      countProduct += product.quantity;
+    }
   }
 
   res.locals.countProduct = countProduct;
