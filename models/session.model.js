@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let sessionSchema = new Schema({
+const sessionSchema = new Schema({
   cart: [
     {
       product: { type: Schema.Types.ObjectId, ref: 'Product' },
@@ -10,6 +10,6 @@ let sessionSchema = new Schema({
   ],
 });
 
-let Session = mongoose.model('sessions', sessionSchema);
+const Session = mongoose.model('sessions', sessionSchema);
 
 module.exports = Session;
