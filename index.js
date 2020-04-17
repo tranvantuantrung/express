@@ -17,7 +17,7 @@ const apiProductRoute = require('./api/routes/product.route');
 const authMiddleware = require('./middlewares/auth.middleware');
 const sessionMiddleware = require('./middlewares/session.middleware');
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 
 app.set('view engine', 'pug');
