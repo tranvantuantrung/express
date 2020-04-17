@@ -4,9 +4,11 @@ module.exports = async function (req, res, next) {
   if (!req.signedCookies.sessionId) {
     let newSession = await Session.create({});
 
-    res.cookie('sessionId', newSession._id, {
+    res.cookie('sessionId', newSession.id, {
       signed: true,
     });
+    next();
+    return;
   }
 
   let session = await Session.findById(req.signedCookies.sessionId);
